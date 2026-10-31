@@ -16,9 +16,14 @@ main { max-width: 640px; margin: 0 auto; }
 h1 { font-size: 24px; margin: 0 0 4px; }
 p { color: var(--muted); margin: 0 0 20px; }
 ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-li { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-a { color: var(--accent); font-weight: 600; text-decoration: none; }
-a:hover, a:focus-visible { text-decoration: underline; }
+/* 每科一個框；已完成的科目整個框都是連結 */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;
+  display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; color: inherit; text-decoration: none; }
+a.card { transition: border-color .15s, background-color .15s; }
+a.card .name { color: var(--accent); font-weight: 600; }
+a.card .name::after { content: " →"; }
+a.card:hover, a.card:focus-visible { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .soon { color: var(--muted); }
 </style>
@@ -28,10 +33,10 @@ a:hover, a:focus-visible { text-decoration: underline; }
   <h1>115-1 期中複習</h1>
   <p>每科講義都有加密，請輸入課程 LINE 群組公布的密碼。</p>
   <ul>
-    <li><a href="dynamics/">動力學</a><span class="date">11/3（二）09:00</span></li>
-    <li><span class="soon">量子力學（準備中）</span><span class="date">11/3（二）15:10</span></li>
-    <li><span class="soon">工程數學（準備中）</span><span class="date">11/5（四）08:30</span></li>
-    <li><span class="soon">雲端生產數據導論（準備中）</span><span class="date">11/6（五）15:10</span></li>
+    <li><a class="card" href="dynamics/"><span class="name">動力學</span><span class="date">11/3（二）09:00</span></a></li>
+    <li><div class="card"><span class="soon">量子力學（準備中）</span><span class="date">11/3（二）15:10</span></div></li>
+    <li><div class="card"><span class="soon">工程數學（準備中）</span><span class="date">11/5（四）08:30</span></div></li>
+    <li><div class="card"><span class="soon">雲端生產數據導論（準備中）</span><span class="date">11/6（五）15:10</span></div></li>
   </ul>
 </main>
 </body>
