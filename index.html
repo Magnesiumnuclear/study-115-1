@@ -26,7 +26,13 @@ a.card:hover, a.card:focus-visible { border-color: var(--accent); background: co
 a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .soon { color: var(--muted); }
+.foot { font-size: 13px; margin: 24px 0 0; }
 </style>
+<script>
+// 瀏覽次數統計（GoatCounter）：只記路徑，?openExternalBrowser=1 等參數不拆成另一頁
+window.goatcounter = { path: function () { return location.pathname } };
+</script>
+<script data-goatcounter="https://study1151.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <main>
@@ -38,6 +44,7 @@ a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     <li><div class="card"><span class="soon">工程數學（準備中）</span><span class="date">11/5（四）08:30</span></div></li>
     <li><div class="card"><span class="soon">雲端生產數據導論（準備中）</span><span class="date">11/6（五）15:10</span></div></li>
   </ul>
+  <p class="foot">本站用 GoatCounter 統計瀏覽次數，不使用 cookie，也不記錄是誰在看。</p>
 </main>
 </body>
 </html>
